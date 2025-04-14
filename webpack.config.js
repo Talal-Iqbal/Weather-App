@@ -25,7 +25,7 @@ module.exports = {
       devtool: "eval-source-map",
       plugins : [
         new HtmlWebpackPlugin({
-            filename : 'weather.html',
+            filename : 'index.html',
             minify : false, 
             template : 'src/template.html',
         })

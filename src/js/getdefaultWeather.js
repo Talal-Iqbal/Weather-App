@@ -15,6 +15,6 @@ export async function getdefaultWeather(dayIndex= 0, firstCall=true) {
         await displayInfo(apiJson, dayIndex)
         displayStats(apiJson, dayIndex)
         loader.style.display = 'none'
-        return location;
+        // return location;
 }
 
