@@ -9,6 +9,7 @@ const date = document.querySelectorAll('.date')
 let value ;
 let isDefault = true;
 
+
 export  function displayWeather(){
     document.addEventListener('DOMContentLoaded', () => {
             getdefaultWeather()
