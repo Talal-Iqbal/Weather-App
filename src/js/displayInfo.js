@@ -21,7 +21,7 @@ export  async function displayInfo(api, dayIndex = 0){
 
     const conditions =   api.currentConditions
     // console.log(api.days[0].temp);
-    const weather = [conditions.temp, conditions.feelslike , conditions.sunrise , conditions.sunset, conditions.precip]
+    const weather = [((conditions.temp -32) * 5/9).toFixed(1) + '°C', ((conditions.feelslike -32) * 5/9).toFixed(1) + '°C' , conditions.sunrise , conditions.sunset, conditions.precip]
     const labels = ['Temparature', 'Feels Like', 'Sun Rise', 'Sun Set', 'Rain']
     let i=0
     weather.forEach(w =>{

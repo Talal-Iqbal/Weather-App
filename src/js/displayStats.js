@@ -21,8 +21,11 @@ export function displayStats(api, dayIndex=0){
         const img = new Image()
         img.src = require(`../icons/${hour.icon}.png`)
         img.setAttribute('class', 'img')
-        actual.innerText = ` Temp ${hour.temp}`
-        feels.innerText = ` Feels ${hour.feelslike}`
+        let tempCelsius  =  (hour.temp - 32) * (5/9)
+        actual.innerText = ` Temp: ${tempCelsius.toFixed(1)}`
+        // °C
+        tempCelsius = (hour.feelslike - 32) * (5/9)
+        feels.innerText = ` Feels: ${tempCelsius.toFixed(1)}`
         statItem.append(actual)
         statItem.append(feels)
         statItem.append(img)
