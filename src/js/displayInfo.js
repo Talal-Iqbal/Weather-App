@@ -41,7 +41,7 @@ export  async function displayInfo(api, dayIndex = 0){
     function reverseString(str) {
         return str.split("-").reverse().join("/")
     }
-    for(let i=0; i<=7; i++){
+    for(let i=0; i<=6; i++){
             console.log(reverseString(days[i].datetime));
             const h4 = document.createElement('h4')
             h4.setAttribute('id',`${i}`)
