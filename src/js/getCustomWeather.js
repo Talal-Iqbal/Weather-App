@@ -4,7 +4,6 @@ import { removeDefaultWeather } from './removedefaultWeather';
 const date = document.querySelectorAll('.date')
 const loader = document.querySelector('.loader-overlay')
 export async function getCustomWeather(input, dayIndex = 0) {
-            loader.style.display = 'flex'
             const location = input;
             console.log(location);
             try {
@@ -12,6 +11,7 @@ export async function getCustomWeather(input, dayIndex = 0) {
                 `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=9CH68YR5NRXPCGFQKYJDDZTPF`
                 );
             console.log(api);
+            loader.style.display = 'flex'
             const apiJson = await api.json();
             console.log(apiJson);
             await removeDefaultWeather()
@@ -27,6 +27,7 @@ export async function getCustomWeather(input, dayIndex = 0) {
             // })
             }
             catch{
+                loader.style.display = 'none'
                 alert('Enter a valid Country/City name')
             }
 }
